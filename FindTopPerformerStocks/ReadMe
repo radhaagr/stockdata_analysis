@@ -1,6 +1,7 @@
-***Project Pipeline***
+## Project Pipeline
 
 The workflow follows a structured financial data processing pipeline.
+
 
 AlphaVantage API
        │
@@ -22,7 +23,11 @@ Feature Dataset Creation
        └── Upward Movement Prediction
 
 
-***Project Structure***
+
+---
+
+## Project Structure
+
 .
 ├── FetchFromAlphaVantage.ipynb
 ├── MissingDataHandler.ipynb
