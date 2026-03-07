@@ -1,4 +1,4 @@
-Project Pipeline
+***Project Pipeline***
 
 The workflow follows a structured financial data processing pipeline.
 
@@ -20,3 +20,20 @@ Feature Dataset Creation
        ├── Top 20 Performer Analysis
        │
        └── Upward Movement Prediction
+
+
+***Project Structure***
+.
+├── FetchFromAlphaVantage.ipynb
+├── MissingDataHandler.ipynb
+├── MergeWithStockPrice.ipynb
+├── Top20PerformerStocks.ipynb
+├── GetTop20Performer_QuarterWise.ipynb
+├── GetTop20Performer_QuarterWiseV1.ipynb
+├── PredictUpwardMovementStocks.ipynb
+│
+├── smart_zero_imputation.py
+├── retry_failed.py
+│
+├── fundamentals_with_prices.csv
+├── sorted_fundamentals_with_prices.csv
