@@ -1,1 +1,22 @@
+Project Pipeline
 
+The workflow follows a structured financial data processing pipeline.
+
+AlphaVantage API
+       │
+       ▼
+Fetch Fundamental Data
+       │
+       ▼
+Missing Data Handling
+(Smart Imputation)
+       │
+       ▼
+Merge with Stock Prices
+       │
+       ▼
+Feature Dataset Creation
+       │
+       ├── Top 20 Performer Analysis
+       │
+       └── Upward Movement Prediction
