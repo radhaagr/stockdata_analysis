@@ -11,8 +11,8 @@ A end-to-end quantitative pipeline that fetches fundamental and price data from 
 | `FetchFromAlphaVantage.ipynb` | Fetches balance sheet, income statement, and price data from the AlphaVantage API |
 | `MissingDataHandler.ipynb` | Handles missing values using smart zero imputation with `_was_missing` indicator flags |
 | `MergeWithStockPrice.ipynb` | Merges fundamental data with historical close prices on fiscal date |
+| `FeatureEngineering.ipynb` | Creates advanced financial metrics and ratios from balance sheet and income statement data. |
 | `GetTop20Performer_QuarterWise.ipynb` | Identifies top 20% stocks by return, ranked cross-sectionally per quarter |
-| `GetTop20Performer_QuarterWiseV1.ipynb` | Improved version with winsorization, excess returns, and volatility adjustment |
 | `Top20PerformerStocks.ipynb` | Summary analysis and visualization of top performer characteristics |
 | `PredictUpwardMovementStocks.ipynb` | LSTM model to predict top 20% performers using 12-month forward return labels |
 | `smart_zero_imputation.py` | Utility script for intelligent missing data imputation |
