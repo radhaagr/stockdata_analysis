@@ -9,12 +9,11 @@ A end-to-end quantitative pipeline that fetches fundamental and price data from 
 | File | Description |
 |------|-------------|
 | `FetchFromAlphaVantage.ipynb` | Fetches balance sheet, income statement, and price data from the AlphaVantage API |
+| `FinancialDataHandler.ipynb` | Handles financial data from balance sheet and income statement with different ticker orders and merge them in to one file join on 'ticker', 'fiscalDateEnding' |
 | `MissingDataHandler.ipynb` | Handles missing values using smart zero imputation with `_was_missing` indicator flags |
-| `MergeWithStockPrice.ipynb` | Merges fundamental data with historical close prices on fiscal date |
 | `FeatureEngineering.ipynb` | Creates advanced financial metrics and ratios from balance sheet and income statement data. |
-| `GetTop20Performer_QuarterWise.ipynb` | Identifies top 20% stocks by return, ranked cross-sectionally per quarter |
+| `MergeWithStockPrice.ipynb` | Merges fundamental data with historical close prices on fiscal date |
 | `Top20PerformerStocks.ipynb` | Summary analysis and visualization of top performer characteristics |
-| `PredictUpwardMovementStocks.ipynb` | LSTM model to predict top 20% performers using 12-month forward return labels |
 | `smart_zero_imputation.py` | Utility script for intelligent missing data imputation |
 | `retry_failed.py` | Retry handler for failed AlphaVantage API calls |
 | `fundamentals_with_prices.csv` | Merged dataset: fundamentals + close prices |
@@ -31,16 +30,19 @@ AlphaVantage API
 FetchFromAlphaVantage          ← Pull balance sheet, income statement, prices
       │
       ▼
+FinancialDataHandler           ← Handles financial data from balance sheet and income statement
+      │
+      ▼
 MissingDataHandler             ← Smart imputation + _was_missing flags
       │
       ▼
 MergeWithStockPrice            ← Join fundamentals with close prices
       │
       ▼
-GetTop20Performer_QuarterWise  ← Cross-sectional ranking, label top 20%
+Top20PerformerStocks           ← Cross-sectional ranking, label top 20%
       │
       ▼
-PredictUpwardMovementStocks    ← LSTM model, walk-forward validation
+ToDo - PredictUpwardMovementStocks    ← LSTM model, walk-forward validation
 ```
 
 ---
@@ -67,9 +69,9 @@ PredictUpwardMovementStocks    ← LSTM model, walk-forward validation
 - `_was_missing` indicator columns retained as binary features
 
 ### Model
-- **Stacked LSTM** with BatchNormalization and Dropout
+- **XgBoost and LightGBM** 
+- **Stacked LSTM**  ToDo -   with BatchNormalization and Dropout
 - **Walk-forward (time-based) train/test split** — no temporal leakage
-- Class weighting to handle the 80/20 label imbalance
 - Early stopping on validation AUC
 
 ---
@@ -89,10 +91,10 @@ API_KEY = "YOUR_API_KEY_HERE"
 
 ### Run Order
 1. `FetchFromAlphaVantage.ipynb`
-2. `MissingDataHandler.ipynb`
-3. `MergeWithStockPrice.ipynb`
-4. `GetTop20Performer_QuarterWiseV1.ipynb`
-5. `PredictUpwardMovementStocks.ipynb`
+2. `FinancialDataHandler.ipynb`
+3. `MissingDataHandler.ipynb`
+4. `MergeWithStockPrice.ipynb`
+5. `Top20PerformerStocks.ipynb`
 
 ---
 
