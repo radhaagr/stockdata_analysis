@@ -36,6 +36,9 @@ FinancialDataHandler           ← Handles financial data from balance sheet and
 MissingDataHandler             ← Smart imputation + _was_missing flags
       │
       ▼
+FeatureEngineering             ← Feature Engineering
+      │
+      ▼
 MergeWithStockPrice            ← Join fundamentals with close prices
       │
       ▼
